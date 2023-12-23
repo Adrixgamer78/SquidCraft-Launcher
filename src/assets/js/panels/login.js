@@ -19,8 +19,8 @@ class Login {
     }
 
     getOnline() {
-        console.log(`Initializing microsoft Panel...`)
-        console.log(`Initializing mojang Panel...`)
+        console.log(`Inicializando microsoft Panel...`)
+        console.log(`Inicializando mojang Panel...`)
         this.loginMicrosoft();
         this.loginMojang();
         document.querySelector('.cancel-login').addEventListener("click", () => {
@@ -30,9 +30,9 @@ class Login {
     }
 
     getOffline() {
-        console.log(`Initializing microsoft Panel...`)
-        console.log(`Initializing mojang Panel...`)
-        console.log(`Initializing offline Panel...`)
+        console.log(`Inicializando microsoft Panel...`)
+        console.log(`Inicializando mojang Panel...`)
+        console.log(`Inicializando el Panel offline...`)
         this.loginMicrosoft();
         this.loginOffline();
         document.querySelector('.cancel-login').addEventListener("click", () => {
@@ -119,11 +119,11 @@ class Login {
             loginBtn.disabled = true;
             mailInput.disabled = true;
             passwordInput.disabled = true;
-            infoLogin.innerHTML = "Connexion en cours...";
+            infoLogin.innerHTML = "Conexión en curso...";
 
 
             if (mailInput.value == "") {
-                infoLogin.innerHTML = "Entrez votre adresse email / Nom d'utilisateur"
+                infoLogin.innerHTML = "Introduzca su dirección de correo electrónico / nombre de usuario"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -132,7 +132,7 @@ class Login {
             }
 
             if (passwordInput.value == "") {
-                infoLogin.innerHTML = "Entrez votre mot de passe"
+                infoLogin.innerHTML = "Introduzca su contraseña"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -148,7 +148,7 @@ class Login {
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
-                infoLogin.innerHTML = 'Adresse E-mail ou mot de passe invalide'
+                infoLogin.innerHTML = 'Dirección de correo electrónico o contraseña no válidas'
                 return
             }
 
@@ -190,7 +190,7 @@ class Login {
         let loginBtn = document.querySelector(".login-btn")
         let mojangBtn = document.querySelector('.mojang')
 
-        mojangBtn.innerHTML = "Offline"
+        mojangBtn.innerHTML = "No Premiun"
 
         mojangBtn.addEventListener("click", () => {
             document.querySelector(".login-card").style.display = "none";
@@ -207,11 +207,11 @@ class Login {
             loginBtn.disabled = true;
             mailInput.disabled = true;
             passwordInput.disabled = true;
-            infoLogin.innerHTML = "Connexion en cours...";
+            infoLogin.innerHTML = "Conexión en curso...";
 
 
             if (mailInput.value == "") {
-                infoLogin.innerHTML = "Entrez votre adresse email / Nom d'utilisateur"
+                infoLogin.innerHTML = "Introduzca su dirección de correo electrónico / nombre de usuario"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -220,7 +220,7 @@ class Login {
             }
 
             if (mailInput.value.length < 3) {
-                infoLogin.innerHTML = "Votre nom d'utilisateur doit avoir au moins 3 caractères"
+                infoLogin.innerHTML = "Tu nombre de usuario debe tener al menos 3 caracteres"
                 cancelMojangBtn.disabled = false;
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
@@ -236,7 +236,7 @@ class Login {
                 loginBtn.disabled = false;
                 mailInput.disabled = false;
                 passwordInput.disabled = false;
-                infoLogin.innerHTML = 'Adresse E-mail ou mot de passe invalide'
+                infoLogin.innerHTML = 'Dirección de correo electrónico o contraseña no válidas'
                 return
             }
 
