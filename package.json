@@ -1,7 +1,7 @@
 {
     "name": "squidcraft-launcher",
     "preductname": "Squid Craft Launcher",
-    "version": "1.3.5",
+    "version": "1.3.6",
     "description": "Launcher Mincraft custom (crack, premium)",
     "main": "src/app.js",
     "author": "Adrixgamer78",
