@@ -1,6 +1,6 @@
 {
     "name": "squidcraft-launcher",
-    "preductname": "Squid Craft Launcher",
+    "preductname": "SquidCraft-Launcher",
     "version": "2.0.2",
     "description": "Minecraft launcher para Squid Craft",
     "main": "src/app.js",
