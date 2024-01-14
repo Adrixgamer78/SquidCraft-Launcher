@@ -1,5 +1,5 @@
 /**
- * @author Luuxis
+ * @author Adrixgamer78
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
  */
 import { config, database, logger, changePanel, appdata, setStatus, pkg, popup } from '../utils.js'
@@ -15,9 +15,14 @@ class Home {
         this.news()
         this.socialLick()
         this.instancesSelect()
+        this.IniciarEstadoDiscord();
         document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
     }
 
+    async IniciarEstadoDiscord() {
+        ipcRenderer.send('new-status-discord');
+    }
+    
     async news() {
         let newsElement = document.querySelector('.news-list');
         let news = await config.getNews().then(res => res).catch(err => false);
@@ -142,7 +147,23 @@ class Home {
         }
 
         instancePopup.addEventListener('click', async e => {
+            
+            let icon_server = document.querySelector('.server-status-icon')
+            let background
+            let erver_info;
+            let body = document.body;
             let configClient = await this.db.readData('configClient')
+            let instance = await config.getInstanceList()
+            let options = instance.find(i => i.name == configClient.instance_selct)
+
+            erver_info = `${options.status.icon_url}`;
+
+            icon_server.setAttribute("src", `${erver_info}`)
+
+            background = `linear-gradient(#00000080, #00000080), url(${options.status.background_url})`;
+
+            body.style.backgroundImage = background;
+
 
             if (e.target.classList.contains('instance-elements')) {
                 let newInstanceSelect = e.target.id
@@ -251,6 +272,7 @@ class Home {
         ipcRenderer.send('main-window-progress-load')
 
         launch.on('extract', extract => {
+            ipcRenderer.send('new-status-discord-jugando',  `Jugando a '${options.name}'`) // Detecta la instancia en la que estas y te cambia el RPC en Discord
             ipcRenderer.send('main-window-progress-load')
             console.log(extract);
         });
@@ -307,6 +329,7 @@ class Home {
             infoStarting.innerHTML = `Verificando...`
             new logger(pkg.name, '#7289da');
             console.log('Close');
+            ipcRenderer.send('delete-and-new-status-discord')
         });
 
         launch.on('error', err => {
