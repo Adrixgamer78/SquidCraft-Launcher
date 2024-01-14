@@ -148,23 +148,6 @@ class Home {
 
         instancePopup.addEventListener('click', async e => {
             
-            let icon_server = document.querySelector('.server-status-icon')
-            let background
-            let erver_info;
-            let body = document.body;
-            let configClient = await this.db.readData('configClient')
-            let instance = await config.getInstanceList()
-            let options = instance.find(i => i.name == configClient.instance_selct)
-
-            erver_info = `${options.status.icon_url}`;
-
-            icon_server.setAttribute("src", `${erver_info}`)
-
-            background = `linear-gradient(#00000080, #00000080), url(${options.status.background_url})`;
-
-            body.style.backgroundImage = background;
-
-
             if (e.target.classList.contains('instance-elements')) {
                 let newInstanceSelect = e.target.id
                 let activeInstanceSelect = document.querySelector('.active-instance')

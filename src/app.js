@@ -108,7 +108,7 @@ ipcMain.on('new-status-discord-jugando', async (event, status) => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: status,
+                details: "Jugando a '${options.name}'",
                 assets: {
                     large_image: 'logo',
                 },
