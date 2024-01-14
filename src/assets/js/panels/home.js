@@ -18,11 +18,11 @@ class Home {
         this.IniciarEstadoDiscord();
         document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
     }
-
+    
     async IniciarEstadoDiscord() {
         ipcRenderer.send('new-status-discord');
     }
-    
+
     async news() {
         let newsElement = document.querySelector('.news-list');
         let news = await config.getNews().then(res => res).catch(err => false);
@@ -147,7 +147,8 @@ class Home {
         }
 
         instancePopup.addEventListener('click', async e => {
-            
+            let configClient = await this.db.readData('configClient')
+
             if (e.target.classList.contains('instance-elements')) {
                 let newInstanceSelect = e.target.id
                 let activeInstanceSelect = document.querySelector('.active-instance')
@@ -298,7 +299,7 @@ class Home {
             };
             new logger('Minecraft', '#36b030');
             ipcRenderer.send('main-window-progress-load')
-            infoStarting.innerHTML = `Iniciando...`
+            infoStarting.innerHTML = `Jugando a ${options.name}`
             console.log(e);
         })
 
