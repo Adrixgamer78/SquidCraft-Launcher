@@ -9,7 +9,7 @@
         "email": "adrixgamer78@gmail.com",
         "url": "https://discord.gg/m2FEDpJcDN"
     },
-    "url": "https://sclauncher.000webhostapp.com/squidcraft/",
+    "url": "https://sclauncher.000webhostapp.com/aderi/",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
