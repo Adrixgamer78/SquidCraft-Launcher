@@ -66,7 +66,7 @@ class Index {
                 appId: preductname,
                 productName: preductname,
                 copyright: 'Copyright © 2020-2024 Adrixgamer78',
-                artifactName: "Aderi.Launcher-${os}-${arch}.${ext}",
+                artifactName: "Squid.Craft.Launcher-${os}-${arch}.${ext}",
                 extraMetadata: { main: 'app/app.js' },
                 files: ["app/**/*", "package.json", "LICENSE.md"],
                 directories: { "output": "dist" },

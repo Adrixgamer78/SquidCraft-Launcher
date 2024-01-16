@@ -1,15 +1,15 @@
 {
-    "name": "Aderi-Launcher",
-    "preductname": "Aderi Launcher",
-    "version": "2.0.3",
-    "description": "Custom Minecraft Launcher",
+    "name": "SquidCraft-Launcher",
+    "preductname": "Squid Craft Launcher",
+    "version": "2.0.2",
+    "description": "Minecraft launcher para Squid Craft",
     "main": "src/app.js",
     "author": {
         "name": "Adrixgamer78",
         "email": "adrixgamer78@gmail.com",
         "url": "https://discord.gg/m2FEDpJcDN"
     },
-    "url": "https://sclauncher.000webhostapp.com/aderi/",
+    "url": "https://sclauncher.000webhostapp.com/squidcraft/",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
