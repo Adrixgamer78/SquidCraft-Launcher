@@ -82,7 +82,7 @@ class Splash {
             this.startLauncher();
         }).catch(e => {
             console.error(e);
-            return this.shutdown("No se ha detectado conexión a Internet,<br>por favor, inténtelo de nuevo más tarde.");
+            return this.shutdown("No se ha podido conectar al servidor,<br>por favor, inténtelo de nuevo más tarde.");
         })
     }
 
