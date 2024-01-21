@@ -1,5 +1,5 @@
 /**
- * @author Adrixgamer78
+ * @author Luuxis
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
  */
 import { config, database, logger, changePanel, appdata, setStatus, pkg, popup } from '../utils.js'
@@ -15,12 +15,7 @@ class Home {
         this.news()
         this.socialLick()
         this.instancesSelect()
-        this.IniciarEstadoDiscord();
         document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
-    }
-    
-    async IniciarEstadoDiscord() {
-        ipcRenderer.send('new-status-discord');
     }
 
     async news() {
@@ -256,7 +251,6 @@ class Home {
         ipcRenderer.send('main-window-progress-load')
 
         launch.on('extract', extract => {
-            ipcRenderer.send('new-status-discord-jugando',  `Jugando a '${options.name}'`) // Detecta la instancia en la que estas y te cambia el RPC en Discord
             ipcRenderer.send('main-window-progress-load')
             console.log(extract);
         });
@@ -299,7 +293,7 @@ class Home {
             };
             new logger('Minecraft', '#36b030');
             ipcRenderer.send('main-window-progress-load')
-            infoStarting.innerHTML = `Jugando a ${options.name}`
+            infoStarting.innerHTML = `Iniciando...`
             console.log(e);
         })
 
@@ -313,7 +307,6 @@ class Home {
             infoStarting.innerHTML = `Verificando...`
             new logger(pkg.name, '#7289da');
             console.log('Close');
-            ipcRenderer.send('delete-and-new-status-discord')
         });
 
         launch.on('error', err => {

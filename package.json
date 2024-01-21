@@ -1,7 +1,7 @@
 {
-    "name": "SquidCraft-Launcher",
+    "name": "squidcraft-launcher",
     "preductname": "Squid Craft Launcher",
-    "version": "2.0.3",
+    "version": "2.0.0",
     "description": "Minecraft launcher para Squid Craft",
     "main": "src/app.js",
     "author": {
@@ -9,7 +9,7 @@
         "email": "adrixgamer78@gmail.com",
         "url": "https://discord.gg/m2FEDpJcDN"
     },
-    "url": "https://sclauncher.000webhostapp.com/squidcraft/",
+    "url": "http://aderisc.alwaysdata.net",
     "scripts": {
         "start": "cross-env-shell NODE_ENV=dev electron .",
         "dev": "cross-env-shell DEV_TOOL=open nodemon --exec npm start",
@@ -22,7 +22,6 @@
         "ignore": "**/test"
     },
     "dependencies": {
-        "discord-rpc": "^4.0.1",
         "electron-updater": "^6.1.4",
         "minecraft-java-core": "^3.8.1",
         "node-bdd": "^2.0.3",

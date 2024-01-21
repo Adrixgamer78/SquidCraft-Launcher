@@ -1,5 +1,5 @@
 /**
- * @author Adrixgamer78
+ * @author Luuxis
  * @license CC-BY-NC 4.0 - https://creativecommons.org/licenses/by-nc/4.0
  */
 
@@ -23,8 +23,6 @@ if (dev) {
     app.setPath('userData', appPath);
     app.setPath('appData', appdata)
 }
-
-const gotTheLock = app.requestSingleInstanceLock();
 
 if (!app.requestSingleInstanceLock()) app.quit();
 else app.whenReady().then(() => {
@@ -73,74 +71,6 @@ ipcMain.handle('is-dark-theme', (_, theme) => {
 })
 
 app.on('window-all-closed', () => app.quit());
-
-const rpc = require('discord-rpc');
-let client = new rpc.Client({ transport: 'ipc' });
-const pkg = require('../package.json');
-
-let startedAppTime = Date.now();
-
-ipcMain.on('new-status-discord', async () => {
-    client.login({ clientId: '1029510506878337035' });
-    client.on('ready', () => {
-        client.request('SET_ACTIVITY', {
-            pid: process.pid,
-            activity: {
-                details: 'En el Launcher',
-                assets: {
-                    large_image: 'logo',
-                },
-                instance: true,
-                timestamps: {
-                    start: startedAppTime
-                }
-            },
-        });
-    });
-});
-
-
-ipcMain.on('new-status-discord-jugando', async (event, status) => {
-    console.log(status)
-    if(client) await client.destroy();
-    client.login({ clientId: '1029510506878337035' });
-    client.on('ready', () => {
-        client.request('SET_ACTIVITY', {
-            pid: process.pid,
-            activity: {
-                details: status,
-                assets: {
-                    large_image: 'logo',
-                },
-                instance: true,
-                timestamps: {
-                    start: startedAppTime
-                }
-            },
-        });
-    });
-});
-
-ipcMain.on('delete-and-new-status-discord', async () => {
-    if(client) client.destroy();
-    client = new rpc.Client({ transport: 'ipc' });
-    client.login({ clientId: '1029510506878337035' });
-    client.on('ready', () => {
-        client.request('SET_ACTIVITY', {
-            pid: process.pid,
-            activity: {
-                details: 'En el Launcher',
-                assets: {
-                    large_image: 'logo',
-                },
-                instance: true,
-                timestamps: {
-                    start: startedAppTime
-                }
-            },
-        });
-    });
-});
 
 autoUpdater.autoDownload = false;
 
