@@ -15,7 +15,12 @@ class Home {
         this.news()
         this.socialLick()
         this.instancesSelect()
+        this.IniciarEstadoDiscord();
         document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
+    }
+
+    async IniciarEstadoDiscord() {
+        ipcRenderer.send('new-status-discord');
     }
 
     async news() {
@@ -251,6 +256,7 @@ class Home {
         ipcRenderer.send('main-window-progress-load')
 
         launch.on('extract', extract => {
+            ipcRenderer.send('new-status-discord-jugando',  `Jugando a '${options.name}'`)
             ipcRenderer.send('main-window-progress-load')
             console.log(extract);
         });
