@@ -1,8 +1,8 @@
 {
-    "name": "SquidCraft-Launcher",
-    "preductname": "Squid Craft Launcher",
-    "version": "2.0.2",
-    "description": "Minecraft launcher para Squid Craft",
+    "name": "Aderi-Launcher",
+    "preductname": "Aderi Launcher",
+    "version": "2.0.3",
+    "description": "Custom Minecraft launcher para Servidores/Eventos",
     "main": "src/app.js",
     "author": {
         "name": "Adrixgamer78",
