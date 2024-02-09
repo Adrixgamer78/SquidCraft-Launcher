@@ -88,7 +88,7 @@ ipcMain.on('new-status-discord', async () => {
             activity: {
                 details: 'En el Launcher',
                 assets: {
-                    large_image: 'aderi',
+                    large_image: 'logo',
                 },
                 instance: true,
                 timestamps: {
@@ -110,7 +110,7 @@ ipcMain.on('new-status-discord-jugando', async (event, status) => {
             activity: {
                 details: status,
                 assets: {
-                    large_image: 'aderi',
+                    large_image: 'logo',
                 },
                 instance: true,
                 timestamps: {
@@ -131,7 +131,7 @@ ipcMain.on('delete-and-new-status-discord', async () => {
             activity: {
                 details: 'En el Launcher',
                 assets: {
-                    large_image: 'aderi',
+                    large_image: 'logo',
                 },
                 instance: true,
                 timestamps: {
