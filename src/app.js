@@ -81,7 +81,7 @@ const pkg = require('../package.json');
 let startedAppTime = Date.now();
 
 ipcMain.on('new-status-discord', async () => {
-    client.login({ clientId: '1029510506878337035' });
+    client.login({ clientId: '1030695607930736660' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
@@ -103,7 +103,7 @@ ipcMain.on('new-status-discord', async () => {
 ipcMain.on('new-status-discord-jugando', async (event, status) => {
     console.log(status)
     if(client) await client.destroy();
-    client.login({ clientId: '1029510506878337035' });
+    client.login({ clientId: '1030695607930736660' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
@@ -124,7 +124,7 @@ ipcMain.on('new-status-discord-jugando', async (event, status) => {
 ipcMain.on('delete-and-new-status-discord', async () => {
     if(client) client.destroy();
     client = new rpc.Client({ transport: 'ipc' });
-    client.login({ clientId: '1029510506878337035' });
+    client.login({ clientId: '1030695607930736660' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
