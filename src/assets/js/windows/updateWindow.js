@@ -23,7 +23,7 @@ function destroyWindow() {
 function createWindow() {
     destroyWindow();
     updateWindow = new BrowserWindow({
-        title: "Aderi Launcher",
+        title: "Squid Craft Launcher",
         width: 400,
         height: 500,
         resizable: false,
