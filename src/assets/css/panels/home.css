@@ -376,3 +376,8 @@
 .active-instance {
     background: var(--element-color);
 }
+
+#music{
+    display: none;
+    autoplay: true;
+}
